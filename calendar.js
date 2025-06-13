@@ -2,7 +2,6 @@ const calendar = document.getElementById("calendar");
 const monthYear = document.getElementById("monthYear");
 const prevBtn = document.getElementById("prev");
 const nextBtn = document.getElementById("next");
-
 const dropdown = document.getElementById("dropdown");
 const monthSelect = document.getElementById("monthSelect");
 const yearSelect = document.getElementById("yearSelect");
@@ -19,9 +18,7 @@ function renderCalendar(date) {
   const lastDay = new Date(year, month + 1, 0);
   const startDay = firstDay.getDay();
   const today = new Date();
-
   monthYear.textContent = date.toLocaleString("default", { month: "long", year: "numeric" });
-
   const totalDays = lastDay.getDate();
 
   for (let i = 0; i < startDay; i++) {
@@ -45,15 +42,13 @@ function renderCalendar(date) {
 
     cell.innerHTML = `<div class="day-number">${day}</div>`;
 
-    // Render events
     if (events[fullDate]) {
       events[fullDate].forEach((event, index) => {
         const evDiv = document.createElement("div");
         evDiv.className = "event";
         evDiv.textContent = event.title;
 
-        // Click to edit
-        evDiv.addEventListener("click", () => {
+          evDiv.addEventListener("click", () => {
           const form = document.createElement("form");
           const input = document.createElement("input");
           input.type = "text";
@@ -87,7 +82,6 @@ function renderCalendar(date) {
       });
     }
 
-    // Add new event
     cell.addEventListener("click", (e) => {
       if (
         e.target.tagName === "BUTTON" ||
@@ -121,7 +115,6 @@ function renderCalendar(date) {
   }
 }
 
-// Dropdown logic
 monthYear.onclick = () => {
   populateDropdown();
   dropdown.classList.toggle("hidden");
