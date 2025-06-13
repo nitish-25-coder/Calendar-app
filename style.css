@@ -1,0 +1,122 @@
+body {
+  font-family: sans-serif;
+  background-color: #f3f4f6;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 700px;
+  margin: auto;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#monthYear {
+  cursor: pointer;
+  color: #0077cc;
+}
+
+.dropdown {
+  margin: 10px 0;
+}
+
+.dropdown select,
+.dropdown button {
+  padding: 5px;
+  margin: 5px;
+  font-size: 14px;
+}
+
+.hidden {
+  display: none;
+}
+
+.days-row {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  font-weight: bold;
+  margin-top: 10px;
+  background-color: #e2e8f0;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  margin-top: 10px;
+}
+button {
+  cursor: pointer;
+}
+
+
+.day {
+  background: #fff;
+  border: 1px solid #ccc;
+  height: 88px;
+  max-height: 92px;
+  overflow-y: auto;
+  position: relative;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.today {
+  background-color: #cce5ff;
+  position: relative;
+  z-index: 0;
+}
+
+.day-number {
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+  background: inherit;
+  z-index: 2;
+  align-self: center;
+}
+
+.event {
+  background: #b2f5ea;
+  padding: 2px 4px;
+  font-size: 12px;
+  margin-top: 4px;
+  border-radius: 4px;
+  word-wrap: break-word;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  width: 100%;
+}
+
+.event-input {
+  width: 90%;
+  padding: 3px;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.save-btn {
+  margin-top: 4px;
+  font-size: 12px;
+  padding: 2px 6px;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+}
